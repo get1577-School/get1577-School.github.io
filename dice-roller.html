@@ -80,7 +80,11 @@
       max = Math.floor(max);
       let number = Math.floor(Math.random() * (max - min + 1)) + min;
       numberSpan.innerHTML = number;
-      previousNums.push(number.toString());
+      if(previousNums.length() == 0) {
+        previousNums.push(number.toString());
+      } else {
+        previousNums.push(" " + number.toString());
+      }
       listOfNums.innerHTML = previousNums;
     }
 
